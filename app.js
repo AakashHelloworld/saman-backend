@@ -36,7 +36,7 @@ app.use('/api', limiter)
 app.use(express.json( {limit: '10kb'} )); 
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:3000'
+    origin: ['http://localhost:3000', 'https://saman-zcx5.onrender.com/']
 }));
 app.use(cookieParser());
 app.use('/api/v1/products', products);
