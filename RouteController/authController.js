@@ -18,7 +18,7 @@ exports.signup = catchAsynceErrorhandler( async (req, res, next)=>{
 
     const cookieoption = {
         expires: new Date(Date.now()+ process.env.JSON_COOKIE_EXPIRE * 24 * 60 * 60 *100 ),
-        httpOnly: true
+//         httpOnly: true
     }
     if(process.env.NODE_ENV === 'production'){
         cookieoption.secure = true
@@ -65,7 +65,7 @@ exports.login = catchAsynceErrorhandler( async (req,res,next)=>{
     // console.log(token);
     const cookieoption = {
         expires: new Date(Date.now()+ process.env.JSON_COOKIE_EXPIRE * 24 * 60 * 60 *100 ),
-    httpOnly: true
+//     httpOnly: true
     }
     if(process.env.NODE_ENV === 'production'){
         cookieoption.secure = true
@@ -230,7 +230,7 @@ exports.resetPassword = catchAsynceErrorhandler(async(req, res,next)=>{
     const token = signToken(user._id);
     const cookieoption = {
         expires: new Date(Date.now()+ process.env.JSON_COOKIE_EXPIRE * 24 * 60 * 60 *100 ),
-    httpOnly: true
+//     httpOnly: true
     }
     if(process.env.NODE_ENV === 'production'){
         cookieoption.secure = true
@@ -267,7 +267,7 @@ exports.updatePassword = catchAsynceErrorhandler(async(req,res,next)=>{
     const token = signToken(user._id);
     const cookieoption = {
         expires: new Date(Date.now()+ process.env.JSON_COOKIE_EXPIRE * 24 * 60 * 60 *100 ),
-    httpOnly: true
+//     httpOnly: true
     }
     if(process.env.NODE_ENV === 'production'){
         cookieoption.secure = true
