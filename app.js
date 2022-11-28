@@ -36,7 +36,7 @@ app.use('/api', limiter)
 app.use(express.json( {limit: '10kb'} )); 
 app.use(cors({
     credentials: true,
-    origin: 'https://saman-zcx5.onrender.com'
+    origin: 'https://merosaman.netlify.app'
 }));
 app.use(cookieParser());
 app.use('/api/v1/products', products);
