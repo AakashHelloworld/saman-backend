@@ -19,7 +19,8 @@ exports.signup = catchAsynceErrorhandler( async (req, res, next)=>{
     const cookieoption = {
         expires: new Date(Date.now()+ process.env.JSON_COOKIE_EXPIRE * 24 * 60 * 60 *100 ),
 //         httpOnly: true,
-        secure:true
+        secure:true,
+        sameSite:'None'
     }
     if(process.env.NODE_ENV === 'production'){
         cookieoption.secure = true
@@ -67,7 +68,8 @@ exports.login = catchAsynceErrorhandler( async (req,res,next)=>{
     const cookieoption = {
         expires: new Date(Date.now()+ process.env.JSON_COOKIE_EXPIRE * 24 * 60 * 60 *100 ),
 //     httpOnly: true,
-        secure:true
+        secure:true,
+        sameSite:'None'
     }
     if(process.env.NODE_ENV === 'production'){
         cookieoption.secure = true
